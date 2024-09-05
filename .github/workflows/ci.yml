@@ -31,3 +31,8 @@ jobs:
           for gosu in gosu-*; do
             ./govulncheck-with-excludes.sh -mode=binary "$gosu"
           done
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: upload-artifact
+          path: gosu-*
